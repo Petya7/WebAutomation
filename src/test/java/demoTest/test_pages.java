@@ -36,7 +36,7 @@ public class test_pages {
         String currentUrl = driver.getCurrentUrl();
         String expectedUrl = pageHome.getUrl();
         String expectedHeaderText = "RobotSpareBin Industries Inc.";
-        Assert.assertEquals("[ERROR] Different than the expected URL!", expectedUrl, currentUrl);
+        Assert.assertEquals(expectedUrl, currentUrl,"[ERROR] Different than the expected URL!");
         Assert.assertTrue(pageHome.getHomePageHeaderText(driver).contains(expectedHeaderText), "[ERROR] Different Header Text Displayed!");
 
     }
@@ -58,7 +58,7 @@ public class test_pages {
         //back to home
         driver.navigate().back();
         Thread.sleep(1500);
-        Assert.assertEquals("[ERROR] Opened a different page ", expectedUrl, actualUrl);
+        Assert.assertEquals(expectedUrl, actualUrl, "[ERROR] Opened a different page ");
     }
 
     @Test
@@ -69,7 +69,7 @@ public class test_pages {
         //back to home
         driver.navigate().back();
         Thread.sleep(1500);
-        Assert.assertEquals("[ERROR] Opened a different page ", expectedUrl, actualUrl);
+        Assert.assertEquals(expectedUrl, actualUrl, "[ERROR] Opened a different page ");
     }
 
     @Test
@@ -89,3 +89,4 @@ public class test_pages {
         driver.quit();
     }
 }
+
